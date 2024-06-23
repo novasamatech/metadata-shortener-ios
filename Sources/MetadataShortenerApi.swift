@@ -10,6 +10,28 @@ public struct ExtrinsicProofParams {
     public let decimals: UInt8
     public let base58Prefix: UInt16
     public let tokenSymbol: String
+    
+    public init(
+        encodedCall: Data,
+        encodedSignedExtra: Data,
+        encodedAdditionalSigned: Data,
+        encodedMetadata: Data,
+        specVersion: UInt32,
+        specName: String,
+        decimals: UInt8,
+        base58Prefix: UInt16,
+        tokenSymbol: String
+    ) {
+        self.encodedCall = encodedCall
+        self.encodedSignedExtra = encodedSignedExtra
+        self.encodedAdditionalSigned = encodedAdditionalSigned
+        self.encodedMetadata = encodedMetadata
+        self.specVersion = specVersion
+        self.specName = specName
+        self.decimals = decimals
+        self.base58Prefix = base58Prefix
+        self.tokenSymbol = tokenSymbol
+    }
 }
 
 public struct MetadataHashParams {
@@ -19,6 +41,22 @@ public struct MetadataHashParams {
     public let decimals: UInt8
     public let base58Prefix: UInt16
     public let tokenSymbol: String
+    
+    public init(
+        metadata: Data,
+        specVersion: UInt32,
+        specName: String,
+        decimals: UInt8,
+        base58Prefix: UInt16,
+        tokenSymbol: String
+    ) {
+        self.metadata = metadata
+        self.specVersion = specVersion
+        self.specName = specName
+        self.decimals = decimals
+        self.base58Prefix = base58Prefix
+        self.tokenSymbol = tokenSymbol
+    }
 }
 
 public protocol MetadataShortenerApiProtocol {
