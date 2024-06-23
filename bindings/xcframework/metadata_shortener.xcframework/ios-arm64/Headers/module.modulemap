@@ -1,0 +1,5 @@
+module metadata_shortener {
+    header "SwiftBridgeCore.h"
+    header "metadata-shortener.h"
+    export *
+}
