@@ -70,6 +70,8 @@ public enum MetadataShortenerApiError: Error {
 }
 
 public final class MetadataShortenerApi {
+    public init() {}
+    
     private func isError(_ result: String) -> Bool {
         result == "-1"
     }
