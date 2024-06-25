@@ -65,21 +65,16 @@ public protocol MetadataShortenerApiProtocol {
 }
 
 public enum MetadataShortenerApiError: Error {
-    case internalError
     case badResult
 }
 
 public final class MetadataShortenerApi {
     public init() {}
-    
-    private func isError(_ result: String) -> Bool {
-        result == "-1"
-    }
 }
 
 public extension MetadataShortenerApi {
     func generateExtrinsicProof(for params: ExtrinsicProofParams) throws -> Data {
-        let result = internalGenerateExtrinsicProof(
+        let result = try internalGenerateExtrinsicProof(
             params.encodedCall.base64EncodedString().intoRustString(),
             params.encodedSignedExtra.base64EncodedString().intoRustString(),
             params.encodedAdditionalSigned.base64EncodedString().intoRustString(),
@@ -91,10 +86,6 @@ public extension MetadataShortenerApi {
             params.tokenSymbol.intoRustString()
         )
         
-        guard !isError(result.toString()) else {
-            throw MetadataShortenerApiError.internalError
-        }
-        
         guard let proof = Data(base64Encoded: result.toString()) else {
             throw MetadataShortenerApiError.badResult
         }
@@ -103,7 +94,7 @@ public extension MetadataShortenerApi {
     }
     
     func generateMetadataHash(for params: MetadataHashParams) throws -> Data {
-        let result = internalGenerateMetadataDigest(
+        let result = try internalGenerateMetadataDigest(
             params.metadata.base64EncodedString().intoRustString(),
             params.specVersion,
             params.specName.intoRustString(),
@@ -111,10 +102,6 @@ public extension MetadataShortenerApi {
             params.decimals,
             params.tokenSymbol.intoRustString()
         )
-        
-        guard !isError(result.toString()) else {
-            throw MetadataShortenerApiError.internalError
-        }
         
         guard let hash = Data(base64Encoded: result.toString()) else {
             throw MetadataShortenerApiError.badResult
