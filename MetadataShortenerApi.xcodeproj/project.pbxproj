@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C7104752C2AB55B00487E64 /* kusama-v15-metadata in Resources */ = {isa = PBXBuildFile; fileRef = 0C7104742C2AB55B00487E64 /* kusama-v15-metadata */; };
 		0CDEF13C2C259BDD003878F2 /* MetadataShortenerApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CDEF1332C259BDD003878F2 /* MetadataShortenerApi.framework */; };
 		0CDEF1552C259CD5003878F2 /* MetadataShortenerApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDEF1542C259CD5003878F2 /* MetadataShortenerApi.swift */; };
 		0CDEF1582C259D0A003878F2 /* MetadataShortenerApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDEF1572C259D0A003878F2 /* MetadataShortenerApiTests.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C7104742C2AB55B00487E64 /* kusama-v15-metadata */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "kusama-v15-metadata"; sourceTree = "<group>"; };
 		0CDEF1332C259BDD003878F2 /* MetadataShortenerApi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MetadataShortenerApi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CDEF13B2C259BDD003878F2 /* MetadataShortenerApiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetadataShortenerApiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CDEF1542C259CD5003878F2 /* MetadataShortenerApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetadataShortenerApi.swift; sourceTree = "<group>"; };
@@ -55,6 +57,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C7104732C2AB52E00487E64 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0C7104742C2AB55B00487E64 /* kusama-v15-metadata */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		0CDEF1292C259BDD003878F2 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +97,7 @@
 		0CDEF1562C259D0A003878F2 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				0C7104732C2AB52E00487E64 /* Resources */,
 				0CDEF1572C259D0A003878F2 /* MetadataShortenerApiTests.swift */,
 			);
 			path = Tests;
@@ -190,6 +201,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C7104752C2AB55B00487E64 /* kusama-v15-metadata in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
