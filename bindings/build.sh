@@ -11,8 +11,9 @@ mkdir -p $output_dir
 
 echo "Building .a libraries"
 
+cargo build --release --target aarch64-apple-darwin
 cargo build --release --target aarch64-apple-ios
-cargo lipo --release --targets x86_64-apple-ios,aarch64-apple-ios-sim
+cargo build --release --target aarch64-apple-ios-sim
 
 # We need single folder with headers to put module map within it
 headers_temp_dir="./metadata-shortener/headers"
@@ -35,11 +36,13 @@ echo "Created module map at: $headers_temp_dir/module.modulemap"
 
 # Here we need 2 lines (-library and -headers) for each architecture
 xcodebuild -create-xcframework \
-    -library $release_dir/aarch64-apple-ios/release/lib${lib_name}.a \
+    -library "${release_dir}/aarch64-apple-ios/release/lib${lib_name}.a" \
     -headers $headers_temp_dir \
-    -library $release_dir/universal/release/lib${lib_name}.a \
+    -library "${release_dir}/aarch64-apple-ios-sim/release/lib${lib_name}.a" \
     -headers $headers_temp_dir \
-    -output $output_dir/${lib_name}.xcframework
+    -library "${release_dir}/aarch64-apple-darwin/release/lib${lib_name}.a" \
+    -headers $headers_temp_dir \
+    -output "$output_dir/${lib_name}.xcframework"
 
 echo "XCFramework created at $output_dir/${lib_name}.xcframework"
 

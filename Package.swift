@@ -12,12 +12,22 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "metadata-shortener",
-            path: "./bindings/xcframework/metadata-shortener.xcframework"
+            path: "./bindings/xcframework/metadata_shortener.xcframework"
         ),
         .target(
             name: "MetadataShortenerApi",
             dependencies: ["metadata-shortener"],
             path: "Sources"
         ),
+        .testTarget(
+            name: "Tests",
+            dependencies: [
+                "MetadataShortenerApi"
+            ],
+            path: "Tests",
+            resources: [
+                .process("Resources/kusama-v15-metadata")
+            ]
+        )
     ]
 )
