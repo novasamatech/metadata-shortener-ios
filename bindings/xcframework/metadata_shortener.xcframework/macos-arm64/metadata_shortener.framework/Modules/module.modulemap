@@ -1,0 +1,5 @@
+framework module metadata_shortener {
+    umbrella header "../Headers/metadata-shortener.h"
+    header "../Headers/SwiftBridgeCore.h"
+    export *
+}
