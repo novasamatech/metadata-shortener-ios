@@ -2,12 +2,13 @@
 
 set -e
 
+
 # Configuration
 lib_name="metadata_shortener"
 output_dir="./xcframework"
 release_dir="./target"
 temp_dir="./temp"
-bundle_id="com.yourcompany.${lib_name}"
+bundle_id="io.novasama.${lib_name}"
 min_macos_version="10.15"
 min_ios_version="14.0"
 
@@ -65,6 +66,8 @@ targets=(
 
 # Determine number of CPU cores for parallel builds
 cores=$(sysctl -n hw.ncpu 2>/dev/null || nproc 2>/dev/null || echo 2)
+
+export IPHONEOS_DEPLOYMENT_TARGET=$min_ios_version
 
 for target in "${targets[@]}"; do
     log "INFO" "Building for $target"
