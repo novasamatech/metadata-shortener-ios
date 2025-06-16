@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "MetadataShortenerApi"
-  s.version      = "0.1.0"
+  s.version      = "0.2.0"
   s.summary      = "Swift wrapper for the metadata shorterner needed to generate metadata hash or proof for extrinsic"
   s.homepage     = "https://github.com/novasamatech/metadata-shortener-ios"
   s.license      = 'MIT'

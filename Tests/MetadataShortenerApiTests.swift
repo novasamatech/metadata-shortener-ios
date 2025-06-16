@@ -50,7 +50,13 @@ final class MetadataShortenerApiTests: XCTestCase {
     }
     
     private func loadMetadata() throws -> Data {
-        guard let metadataUrl = Bundle(for: Self.self).url(forResource: "kusama-v15-metadata", withExtension: "") else {
+        let bundle: Bundle
+#if SWIFT_PACKAGE
+        bundle = Bundle.module
+#else
+        bundle = Bundle(for: Self.self)
+#endif
+        guard let metadataUrl = bundle.url(forResource: "kusama-v15-metadata", withExtension: "") else {
             fatalError("Can't read metadata")
         }
         
