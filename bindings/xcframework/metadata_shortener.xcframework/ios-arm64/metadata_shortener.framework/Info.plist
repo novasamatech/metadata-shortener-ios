@@ -9,11 +9,11 @@
     <key>CFBundleExecutable</key>
     <string>metadata_shortener</string>
     <key>CFBundleIdentifier</key>
-    <string>io.novasama.metadata_shortener</string>
+    <string>io.novasama.metadata-shortener</string>
     <key>CFBundleVersion</key>
-    <string>0.1.0-4-g5e6ebc4</string>
+    <string>0.2.0</string>
     <key>CFBundleShortVersionString</key>
-    <string>0.1.0-4-g5e6ebc4</string>
+    <string>0.2.0</string>
     <key>CFBundleSupportedPlatforms</key>
     <array>
         <string>iPhoneOS</string>

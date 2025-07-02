@@ -8,7 +8,7 @@ lib_name="metadata_shortener"
 output_dir="./xcframework"
 release_dir="./target"
 temp_dir="./temp"
-bundle_id="io.novasama.${lib_name}"
+bundle_id="io.novasama.metadata-shortener"
 min_macos_version="10.15"
 min_ios_version="14.0"
 
